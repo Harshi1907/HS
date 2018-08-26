@@ -24,6 +24,7 @@ public class JobController {
 	@RequestMapping("/JobRegister")
 	public String m1(){
 		System.out.println("index page register is called");
+		System.out.println("hi");
 		return "JobRegister";
 	}
 	
