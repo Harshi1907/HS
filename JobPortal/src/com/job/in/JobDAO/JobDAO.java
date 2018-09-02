@@ -26,11 +26,14 @@ public class JobDAO {
 		t.commit();
 		return true;
 	}
-	public boolean LoginDAO(RegisterDTO rd) {
+	public RegisterDTO LoginDAO(RegisterDTO rd) {
 		Session s=sf.openSession();
 		Criteria c=s.createCriteria(RegisterDTO.class);
-		c.add(Restrictions.eq("email", rd.getFullname()));
-		return true;
+		c.add(Restrictions.eq("email", rd.getEmail()));
+		c.add(Restrictions.eq("password", rd.getPassword()));
+		RegisterDTO rd1= (RegisterDTO) c.uniqueResult();
+		System.out.println("rd1=========" + rd1);
+		return rd1;
 	}
 	public boolean CriteriaDAO(RegisterDTO rd) {
 		Session s= sf.openSession();
@@ -67,6 +70,15 @@ public class JobDAO {
 		CompanyDTO cdt=(CompanyDTO) c.uniqueResult();
 		
 		return cdt;
+	}
+	public AdminDTO AdminLoginDAO(AdminDTO ad) {
+		Session s=sf.openSession();
+		Criteria c=s.createCriteria(AdminDTO.class);
+		c.add(Restrictions.eq("adminname", ad.getAdminname()));
+		c.add(Restrictions.eq("adminpass", ad.getAdminpass()));
+		AdminDTO ad1= (AdminDTO) c.uniqueResult();
+		System.out.println("rd1=========" + ad1);
+		return ad1;
 	}
 	}
 	

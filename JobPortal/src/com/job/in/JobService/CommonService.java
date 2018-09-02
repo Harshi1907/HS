@@ -20,7 +20,7 @@ public class CommonService {
 		return d1.RegisterDAO(rd);	}
 	
 	
-	public boolean LoginService(RegisterDTO rd) {
+	public RegisterDTO  LoginService(RegisterDTO rd) {
 		return d1.LoginDAO(rd);
 	}
 
@@ -49,6 +49,11 @@ public class CommonService {
 
 	public CompanyDTO ApplyDetails(int cid) {
 		return d1.ApplyDetails(cid);
+	}
+
+
+	public AdminDTO AdminLoginService(AdminDTO ad) {
+		return d1.AdminLoginDAO(ad);
 	}
 
 }

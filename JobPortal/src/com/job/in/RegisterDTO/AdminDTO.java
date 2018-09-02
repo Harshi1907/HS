@@ -19,6 +19,13 @@ public class AdminDTO {
 	private String adminname;
 	private String adminmail;
 	private long adminmob;
+	private String adminpass;
+	public String getAdminpass() {
+		return adminpass;
+	}
+	public void setAdminpass(String adminpass) {
+		this.adminpass = adminpass;
+	}
 	public int getAid() {
 		return aid;
 	}

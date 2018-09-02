@@ -20,14 +20,10 @@
 <th>Email</th>
 <th>Percentage</th>
 </tr>
-
-<c:forEach  var="dto" items="${mv}">
-<tr><td>${dto.email}</td>
-<td>${dto.yop}</td>
-<td>${dto.percentage}</td>
+<tr><td>${l1.email}</td>
+<td>${l1.yop}</td>
+<td>${l1.percentage}</td>
  </tr>
-<br>
-</c:forEach>
 
 <br>
 

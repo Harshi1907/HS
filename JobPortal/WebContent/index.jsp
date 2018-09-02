@@ -48,7 +48,10 @@ body{
 
 
 <br>
-<a href="JobAdmin"><h2>Admin</h2></a>
+<a href="JobAdmin"><h2>Admin Register</h2></a>
+
+<br>
+<a href="AdminLogin"><h2>Admin Login</h2></a>
 
 </body>
 </html>

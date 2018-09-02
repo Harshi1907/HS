@@ -54,11 +54,15 @@ public class JobController {
 	public ModelAndView mv1(@ModelAttribute RegisterDTO rd){
 		
 		System.out.println("controller");
+		System.out.println("inside login email =============" + rd.getEmail());
+		System.out.println("inside login password=========" + rd.getPassword());
 		try {
-			boolean b2=s1.LoginService(rd);
-			return new ModelAndView("Criteria","l1",rd);
+			RegisterDTO rd2=s1.LoginService(rd);
+			System.out.println(rd2.getFullname());
+			return new ModelAndView("Criteria","l1",rd2);
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			return new ModelAndView("JobLogin","l1", "login"
 					+ " failed please try again");
 		}
@@ -103,14 +107,10 @@ public class JobController {
 		
 			boolean b4=s1.CompanyService(cd);
 			return new ModelAndView("CompanyDetails","c1","Your company is registered");
-			
-		
-		
-		
-	}
+		}
 	
 	
-	//Admin Details
+	//Admin Register
 
 	@RequestMapping("/JobAdmin")
 	public String m5(){
@@ -120,10 +120,20 @@ public class JobController {
 	
 	@RequestMapping("/AdminServlet")
 	public ModelAndView mv4(@ModelAttribute AdminDTO ad){
-		
-		System.out.println("controller admin");
-		
-			boolean b5=s1.AdminService(ad);
+		boolean b5=s1.AdminService(ad);
+			return new ModelAndView("CompanyDetails","a1",ad);
+			}
+	//Admin Login
+	
+	@RequestMapping("/AdminLogin")
+	public String m7(){
+		System.out.println("admin login page  is called");
+		return "AdminLogin";
+	}
+	
+	@RequestMapping("/AdminLoginServlet")
+	public ModelAndView mv5(@ModelAttribute AdminDTO ad){
+		AdminDTO ad1=s1.AdminLoginService(ad);
 			return new ModelAndView("CompanyDetails","a1",ad);
 			}
 	//Company Elegible

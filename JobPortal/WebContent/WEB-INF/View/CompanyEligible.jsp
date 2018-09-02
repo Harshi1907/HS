@@ -16,7 +16,7 @@
 <th>Apply</th>
 </tr>
 
-<c:forEach  var="dto" items="${m6}">
+<c:forEach  var="dto" items="${mv3}">
 <tr><td>${dto.companyname}</td>
 <td>${dto.requirement}</td>
 
